@@ -19,5 +19,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Run unit tests with Maven
-      run: mvn -B test -Dtest=com.ipi.jva350.RunCucumberTest --file pom.xml
+    - name: install pom
+      run: mvm --file pom.xml
+    - name: Run SalariesAideADomicileTest
+      run: mvn -B test -Dtest=com.ipi.jva350.SalariesAideADomicileTest
+    - name: Run testCalculeJoursDeCongeDecomptesPourPlage
+      run: mvn -B test -Dtest=com.ipi.jva350.testCalculeJoursDeCongeDecomptesPourPlage 
