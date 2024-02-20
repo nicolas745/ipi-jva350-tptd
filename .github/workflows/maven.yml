@@ -19,9 +19,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: install pom
-      run: mvm --file pom.xml
     - name: Run SalariesAideADomicileTest
-      run: mvn -B test -Dtest=com.ipi.jva350.SalariesAideADomicileTest
+      run: mvn -B test -Dtest=com.ipi.jva350.SalariesAideADomicileTest --file pom.xml
     - name: Run testCalculeJoursDeCongeDecomptesPourPlage
-      run: mvn -B test -Dtest=com.ipi.jva350.testCalculeJoursDeCongeDecomptesPourPlage 
+      run: mvn -B test -Dtest=com.ipi.jva350.testCalculeJoursDeCongeDecomptesPourPlage --file pom.xml
