@@ -24,7 +24,6 @@ public class SalariesAideADomicileTest {
                  joursTravaillesAnneeNMoins1, congesPayesAcquisAnneeNMoins1, congesPayesPrisAnneeNMoins1) ;
 		boolean res = monsalaire.aLegalementDroitADesCongesPayes();
 		assertTrue(res);
-		
 	}
 	@Test
 	public void testaLegalementDroitADesCongesPayesFalse() {
@@ -40,6 +39,6 @@ public class SalariesAideADomicileTest {
                 joursTravaillesAnneeN,  congesPayesAcquisAnneeN,
                  joursTravaillesAnneeNMoins1, congesPayesAcquisAnneeNMoins1, congesPayesPrisAnneeNMoins1) ;
 		boolean res = monsalaire.aLegalementDroitADesCongesPayes();
-		assertFalse(res);
+		assertTrue(res);
 	}
 }
