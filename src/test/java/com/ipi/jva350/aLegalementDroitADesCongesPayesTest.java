@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 import com.ipi.jva350.model.SalarieAideADomicile;
-public class SalarieAideADomicileTest {
+public class aLegalementDroitADesCongesPayesTest {
 	   @Test
 	    public void aLegalementDroitADesCongesPayes1(){
 	       // Given : Mise en place de l'environnement du test et de ses données (hypothèses)

@@ -11,8 +11,6 @@ import com.ipi.jva350.model.SalarieAideADomicile;
 
 public class testCalculeJoursDeCongeDecomptesPourPlage {
 
-    // ... (Previous tests)
-
     @Test
     public void testCalculeJoursDeCongeDecomptesPourPlage() {
         // Given
@@ -43,7 +41,6 @@ public class testCalculeJoursDeCongeDecomptesPourPlage {
         SalarieAideADomicile salarie = new SalarieAideADomicile();
         LocalDate dateDebut = LocalDate.of(2024, 2, 18);
         LocalDate dateFin = LocalDate.of(2024, 2, 20);
-
         // When
         LinkedHashSet<LocalDate> joursDeConge = salarie.calculeJoursDeCongeDecomptesPourPlage(dateDebut, dateFin);
         // Then
