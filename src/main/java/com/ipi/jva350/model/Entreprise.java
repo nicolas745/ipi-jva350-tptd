@@ -139,7 +139,7 @@ public final class Entreprise {
             test--;
         }
         return monEntier != test;
-    } &&
+    }
 
     /**
      * Calcule si une date donnée est dans une plage (intervalle) de date (inclusif)
@@ -152,7 +152,7 @@ public final class Entreprise {
     	Date dD = new Date(d.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
     	Date debutD = new Date(debut.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
     	Date fintD = new Date(fin.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
-    	return debutD.getTime() < dD.getTime() && dD.getTime() < fintD.getTime();
+    	return (debutD.getTime() < dD.getTime() && dD.getTime() < fintD.getTime());
     }
 
 }

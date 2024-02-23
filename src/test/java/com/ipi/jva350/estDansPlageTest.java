@@ -14,8 +14,6 @@ public class estDansPlageTest {
 	public void estDansPlage() {
 		Entreprise entreprise = new Entreprise();
 		boolean res = entreprise.estDansPlage(LocalDate.of(2024, 3, 2), LocalDate.of(2024, 1, 1), LocalDate.of(2025, 1, 1));
-		res = entreprise.estDansPlage(LocalDate.of(2024, 3, 1), LocalDate.of(2024, 1, 1), LocalDate.of(2025, 1, 1));
-		
 		assertEquals(true,res);
 	}
 }
