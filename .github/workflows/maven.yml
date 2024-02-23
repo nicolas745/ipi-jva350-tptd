@@ -20,20 +20,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Install sonar-scanner and build-wrapper
-      uses: SonarSource/sonarcloud-github-c-cpp@v2
-    - name: Run build-wrapper
-      run: |
-        build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }}<insert_your_clean_build_command>
-    - name: Run sonar-scanner
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        sonar-scanner --define sonar.cfamily.build-wrapper-output="${{ env.BUILD_WRAPPER_OUT_DIR }}"
     - name: Run aLegalementDroitADesCongesPayesTest
       run: mvn -B test -Dtest=com.ipi.jva350.aLegalementDroitADesCongesPayesTest --file pom.xml
     - name: Run estJourOuvrableTest
       run: mvn -B test -Dtest=com.ipi.jva350.estJourOuvrableTest --file pom.xml
     - name: Run testCalculeJoursDeCongeDecomptesPourPlage
       run: mvn -B test -Dtest=com.ipi.jva350.testCalculeJoursDeCongeDecomptesPourPlage --file pom.xml
+    - name: Run estDansPlageTest
+      run: mvn -B test -Dtest=com.ipi.jva350.estDansPlageTest --file pom.xml
