@@ -5,11 +5,6 @@ import java.util.*;
 public final class Entreprise {
 
     private static final Map<Integer, LocalDate> datePaque = new HashMap<>();
-
-    public Entreprise() {
-
-    }
-
     static {
         datePaque.put(2012, LocalDate.of(2012, 4, 8));
         datePaque.put(2013, LocalDate.of(2013, 3, 31));
@@ -83,31 +78,7 @@ public final class Entreprise {
             proportionPonderee += 20;
         }
         if (mois >= 4) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 5) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 6) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 7) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 8) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 9) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 10) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 11) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 12) {
-            proportionPonderee += 8;
+            proportionPonderee += (mois-3)*8;
         }
         return proportionPonderee / 12d / 10d;
     }
@@ -150,10 +121,14 @@ public final class Entreprise {
      * @param fin date de fin de la plage
      * @return
      */
+    public static Date LocalDateTOdate(LocalDate localdate) {
+    	Date date = new Date(localdate.getYear() - 1900, localdate.getMonthValue() - 1, localdate.getDayOfMonth());
+		return date;
+    }
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
-    	Date dD = new Date(d.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
-    	Date debutD = new Date(debut.getYear() - 1900, debut.getMonthValue() - 1, debut.getDayOfMonth());
-    	Date fintD = new Date(fin.getYear() - 1900, fin.getMonthValue() - 1, fin.getDayOfMonth());
+    	Date dD = LocalDateTOdate(d);
+    	Date debutD = LocalDateTOdate(debut);
+    	Date fintD = LocalDateTOdate(fin);
     	return (debutD.getTime() < dD.getTime() && dD.getTime() < fintD.getTime());
     }
 
