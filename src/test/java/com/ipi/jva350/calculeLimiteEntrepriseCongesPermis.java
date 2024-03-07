@@ -1,6 +1,8 @@
 package com.ipi.jva350;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 
@@ -29,7 +31,7 @@ public class calculeLimiteEntrepriseCongesPermis {
         LocalDate moisDebutContrat = LocalDate.of(2023, 1, 12);
         LocalDate premierJourConge = LocalDate.of(2024, 1, 26);
         LocalDate dernierJourConge = LocalDate.of(2022, 1, 30);
-        // When
+        
         long res = SalarieAideADomicileService.calculeLimiteEntrepriseCongesPermis(
                 moisEnCours,
                 congePayeAquisAnneeNMoins1,
@@ -39,5 +41,4 @@ public class calculeLimiteEntrepriseCongesPermis {
         // Then : assertions sur le vrai état du système
         assertEquals(1, 1);
     }*/
-
 }
