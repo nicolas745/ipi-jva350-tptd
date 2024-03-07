@@ -66,7 +66,6 @@ public final class Entreprise {
                 LocalDate.of(now.getYear(), 11,11),
                 // 25 décembre Noël
                 LocalDate.of(now.getYear(), 12,25)
-
         );
     }
 
@@ -137,7 +136,9 @@ public final class Entreprise {
         int test = bissextile(jour.getYear()) ? 1 : 0;
         if (test != 0 && !(monEntier > 1)) {
             test--;
+            System.out.println(test);
         }
+        //System.out.println(monEntier);
         return monEntier != test;
     }
 
@@ -150,8 +151,8 @@ public final class Entreprise {
      */
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
     	Date dD = new Date(d.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
-    	Date debutD = new Date(debut.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
-    	Date fintD = new Date(fin.getYear() - 1900, d.getMonthValue() - 1, d.getDayOfMonth());
+    	Date debutD = new Date(debut.getYear() - 1900, debut.getMonthValue() - 1, debut.getDayOfMonth());
+    	Date fintD = new Date(fin.getYear() - 1900, fin.getMonthValue() - 1, fin.getDayOfMonth());
     	return (debutD.getTime() < dD.getTime() && dD.getTime() < fintD.getTime());
     }
 

@@ -9,7 +9,7 @@ import com.ipi.jva350.model.SalarieAideADomicile;
 public class aLegalementDroitADesCongesPayesTest {
 	   @Test
 	    public void aLegalementDroitADesCongesPayes1(){
-	       // Given : Mise en place de l'environnement du test et de ses données (hypothèses)
+	       // Given
 	       double joursTravaillesAnneeNMoins1=1;
 	       SalarieAideADomicile salarie=new SalarieAideADomicile();
 	       salarie.setJoursTravaillesAnneeNMoins1(joursTravaillesAnneeNMoins1);
@@ -20,7 +20,7 @@ public class aLegalementDroitADesCongesPayesTest {
 	   }
 	   @Test
 	   public void aLegalementDroitADesCongesPayes90(){
-	      // Given : Mise en place de l'environnement du test et de ses données (hypothèses)
+	      // Given
 	      double joursTravaillesAnneeNMoins1=90;
 	      SalarieAideADomicile salarie=new SalarieAideADomicile();
 	      salarie.setJoursTravaillesAnneeNMoins1(joursTravaillesAnneeNMoins1);

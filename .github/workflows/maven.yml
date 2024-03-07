@@ -28,3 +28,6 @@ jobs:
       run: mvn -B test -Dtest=com.ipi.jva350.testCalculeJoursDeCongeDecomptesPourPlage --file pom.xml
     - name: Run estDansPlageTest
       run: mvn -B test -Dtest=com.ipi.jva350.estDansPlageTest --file pom.xml
+    - name: Run estjourFerieTest
+      run: mvn -B test -Dtest=com.ipi.jva350.estjourFerieTest --file pom.xml
+
