@@ -22,6 +22,10 @@ jobs:
         cache: maven
     - name: Run aLegalementDroitADesCongesPayesTest
       run: mvn -B test -Dtest=com.ipi.jva350.aLegalementDroitADesCongesPayesTest --file pom.xml
+    - name: Run calculeLimiteEntrepriseCongesPermis
+      run: mvn -B test -Dtest=com.ipi.jva350.calculeLimiteEntrepriseCongesPermis --file pom.xml
+    - name: Run estbisectiTest
+      run: mvn -B test -Dtest=com.ipi.jva350.estbisectiTest --file pom.xml
     - name: Run estJourOuvrableTest
       run: mvn -B test -Dtest=com.ipi.jva350.estJourOuvrableTest --file pom.xml
     - name: Run testCalculeJoursDeCongeDecomptesPourPlage
@@ -30,4 +34,6 @@ jobs:
       run: mvn -B test -Dtest=com.ipi.jva350.estDansPlageTest --file pom.xml
     - name: Run estjourFerieTest
       run: mvn -B test -Dtest=com.ipi.jva350.estjourFerieTest --file pom.xml
-
+    - name: Run proportionPondereeDuMoisTest
+      run: mvn -B test -Dtest=com.ipi.jva350.proportionPondereeDuMoisTest --file pom.xml
+      
