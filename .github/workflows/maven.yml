@@ -2,9 +2,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master,'evaluation' ]
   pull_request:
-    branches: [ master ]
+    branches: [ master,'evaluation' ]
 
 jobs:
   build:
@@ -16,8 +16,18 @@ jobs:
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
+        fetch-depth: 0
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Run unit tests with Maven
-      run: mvn -B test -Dtest=com.ipi.jva350.RunCucumberTest --file pom.xml
+    - name: Run aLegalementDroitADesCongesPayesTest
+      run: mvn -B test -Dtest=com.ipi.jva350.aLegalementDroitADesCongesPayesTest --file pom.xml
+    - name: Run estJourOuvrableTest
+      run: mvn -B test -Dtest=com.ipi.jva350.estJourOuvrableTest --file pom.xml
+    - name: Run testCalculeJoursDeCongeDecomptesPourPlage
+      run: mvn -B test -Dtest=com.ipi.jva350.testCalculeJoursDeCongeDecomptesPourPlage --file pom.xml
+    - name: Run estDansPlageTest
+      run: mvn -B test -Dtest=com.ipi.jva350.estDansPlageTest --file pom.xml
+    - name: Run estjourFerieTest
+      run: mvn -B test -Dtest=com.ipi.jva350.estjourFerieTest --file pom.xml
+
